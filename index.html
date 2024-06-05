@@ -23,8 +23,9 @@
             const bannerText = document.getElementById("BannerText");
             const dorkyDomainsLink = document.getElementById("dorkyDomainsLink"); 
             subDomainName = (subDomainName == "") ? "Speedy" : subDomainName;
-            bannerText.innerHTML = subDomainName + domainName;
-            let original = dorkyDomainsLink.href.replace("{0}", subDomainName);
+            let fullDomainName = subDomainName + domainName;
+            bannerText.innerHTML = fullDomainName;
+            let original = dorkyDomainsLink.href.replace("{0}", fullDomainName);
             dorkyDomainsLink.href = original;
 
             fitTextToContainer(bannerText, bannerText.innerHTML);
