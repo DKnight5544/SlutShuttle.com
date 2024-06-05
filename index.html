@@ -1,26 +1,182 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Open Graph Meta Tags for Facebook -->
-    <meta property="og:title" content="Slut Shuttle">
-    <meta property="og:description" content="Your Content Here">
-    <meta property="og:image" content="https://www.slutshuttle.com/images/Promo.png">
-    <meta property="og:url" content="https://www.slutshuttle.com">
 
     <title>SlutShuttle.com</title>
 
     <!-- Add your CSS file here -->
-    <link rel="stylesheet" href="index.css">
+    <!--<link rel="stylesheet" href="index.css">-->
 
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script>
+
+        let subDomainName = getQueryStringValue();
+        const domainName = ".SlutShuttle.com";
+
+        function begin() {
+
+            const bannerText = document.getElementById("BannerText");
+            const dorkyDomainsLink = document.getElementById("dorkyDomainsLink"); 
+            subDomainName = (subDomainName == "") ? "Speedy" : subDomainName;
+            bannerText.innerHTML = subDomainName + domainName;
+            let original = dorkyDomainsLink.href.replace("{0}", subDomainName);
+            dorkyDomainsLink.href = original;
+
+            fitTextToContainer(bannerText, bannerText.innerHTML);
+
+        }
+
+        function getQueryStringValue() {
+            // Create a URL object from the input URL string
+            const urlObject = new URL(window.location.href);
+
+            // Get the query string from the URL
+            const queryString = urlObject.search;
+
+            // Remove the leading "?" from the query string
+            const query = queryString.slice(1);
+
+            return query;
+        }
+
+        function fitTextToContainer(container, text) {
+            const maxFontSize = 40;
+            const minFontSize = 10;
+            let fontSize = maxFontSize;
+
+            container.style.fontSize = `${fontSize}px`;
+            container.textContent = text;
+
+            while (container.scrollWidth > container.clientWidth && fontSize > minFontSize) {
+                fontSize--;
+                container.style.fontSize = `${fontSize}px`;
+            }
+        }
+    </script>
+    <style>
+        /* Mobile-first styles */
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+        }
+
+        :root {
+            --crystals: #3498db;
+            --wild: greenyellow;
+        }
+
+        .main-container {
+            width: 100%;
+            background-color: #000000;
+            color: var(--crystals);
+            position: relative;
+            padding-bottom: 50px;
+            box-sizing: border-box;
+        }
+
+
+
+        banner {
+            font-family: "Poetsen One", sans-serif;
+            font-size: 40px;
+            font-weight: 500;
+            font-style: normal;
+            background-color: var(--crystals);
+            color: black;
+            width: 100%;
+            display: block;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .section {
+            width: 100%;
+            font-size: 20px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 30px;
+            background-color: black;
+            color: var(--crystals);
+            padding: 15px;
+            padding-left: 40px;
+            box-sizing: border-box;
+        }
+
+        .reversed {
+            background-color: var(--crystals);
+            color: black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 1024px) {
+
+            .main-container {
+                width: 1024px;
+                margin-left: auto;
+                margin-right: auto;
+                border-width: 2px;
+                border-style: solid;
+                color: var(--crystals);
+            }
+        }
+    </style>
 </head>
-<body>
+<body onload="begin();">
     <div class="main-container">
-        <a href="mailto:dave@mostlyspam.com?subject=SlutShuttle.com">
-            <img class="banner-image" src="/images/FullPage.png" />
+
+        <a id="dorkyDomainsLink" href="https://www.DorkyDomains.com?{0}" target="_blank">
+
+            <banner id="BannerText"></banner>
+
+            <div class="section">
+                No, I won't really deliver sluts to your door
+                in 30 minutes or less, but I got you to click
+                didn't I?
+            </div>
+
+            <div class="section reversed">
+                You couldn't help it could you?
+            </div>
+
+            <div class="section">
+                You knew it was wrong, but you did it anyway.
+            </div>
+
+            <div class="section reversed">
+                You tried to resist it, but everyone clicks it.
+            </div>
+
+            <div class="section">
+                So now that you're here, take a minute to peer,
+            </div>
+
+            <div class="section reversed">
+                At Dave's Dorky Domains, you've nothing to fear.
+            </div>
+
+            <div class="section">
+                You're one click away from laughter it seems,
+            </div>
+
+            <div class="section reversed">
+                At Dave's Dorky Domains, just click the screen!
+            </div>
+
         </a>
+
+
+
     </div>
 
 </body>
