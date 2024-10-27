@@ -1,27 +1,161 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Open Graph Meta Tags for Facebook -->
-    <meta property="og:title" content="Slut Shuttle">
-    <meta property="og:description" content="Your Content Here">
-    <meta property="og:image" content="https://www.slutshuttle.com/images/Promo.png">
-    <meta property="og:url" content="https://www.slutshuttle.com">
+    <meta property="og:title" content="SlutShuttle.com">
+    <meta property="og:description" content="Custom Clikables">
+    <meta property="og:image" content="https://www.SlutShuttle.com/preview.png">
+    <meta property="og:url" content="https://www.SlutShuttle.com/index.html">
 
-    <title>SlutShuttle.com</title>
+    <title>SlutShuttle.com - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left; /* Align text to the left */
+            margin: 0; /* Remove body padding and margin */
+            display: none;
+        }
 
-    <!-- Add your CSS file here -->
-    <link rel="stylesheet" href="index.css">
+        h1 {
+            font-size: 2.5em;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            letter-spacing: 0; /* Starting letter spacing */
+            animation: shrinkEffect 3s infinite; /* Apply the shrinking animation */
+        }
 
+        @keyframes shrinkEffect {
+            0% {
+                letter-spacing: 5px; /* Start with expanded letters */
+            }
+
+            50% {
+                letter-spacing: -2px; /* Contract to simulate shrinking */
+            }
+
+            100% {
+                letter-spacing: 5px; /* Return to expanded letters */
+            }
+        }
+
+        .link-container {
+            width: 100%;
+            padding: 0 10px; /* 10px padding on left and right */
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 10px 0 0; /* Margin between buttons */
+            border: 2px solid;
+            text-decoration: none;
+            font-weight: bold;
+            width: 220px; /* Set the normal width to 200px */
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding and border are included in width */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        /* Media query for screens less than 600px wide (targeting cell phones) */
+        @media (max-width: 600px) {
+            .button-link {
+                width: 100%; /* Make the buttons full width */
+                margin: 10px 0; /* Remove right margin to avoid overflow */
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="main-container">
-        <a href="mailto:dave@mostlyspam.com?subject=SlutShuttle.com">
-            <img class="banner-image" src="/images/FullPage.png" />
-        </a>
+
+    <h1>SlutShuttle.com</h1>
+
+    <div class="link-container">
+        <a href="https://www.amazon.com/dp/B0DJFJYDSH/ref=cm_sw_r_as_gl_apa_gl_i_DBF5JYZYA17D5BE2733W?linkCode=ml1&tag=dorkydomains-20" class="button-link">Overcoming MLM</a>
+        <a href="http://www.dorkydomains.com" class="button-link">Dave's Dorky Domains</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <a href="index.html" class="button-link">Coming Soon</a>
+        <div class="clear"></div>
     </div>
+
+    <script>
+        // Fixed color palette array
+        const colorPalette = [
+            "black",
+            "red",
+            "forestgreen",
+            "blue",
+            "purple",
+            "orange",
+            "brown",
+            "#FF0000", /* Fire Engine Red */
+            "#B22222" /* Brick Red */
+        ];
+
+        // Function to pick a random color from the fixed palette
+        function getRandomColorFromPalette() {
+            const randomIndex = Math.floor(Math.random() * colorPalette.length);
+            return colorPalette[randomIndex];
+        }
+
+        // Apply the random color from the palette to the page elements
+        function applyRandomColor() {
+            const randomColor = getRandomColorFromPalette();
+            const elementsToColor = document.querySelectorAll('h1, .button-link');
+
+            // Apply random color to h1 and button-link border and text
+            elementsToColor.forEach((el) => {
+                if (el.tagName === 'H1') {
+                    el.style.backgroundColor = randomColor;
+                } else {
+                    el.style.borderColor = randomColor;
+                    el.style.color = randomColor;
+                    el.addEventListener('mouseover', function () {
+                        el.style.backgroundColor = randomColor;
+                        el.style.color = 'white';
+                    });
+                    el.addEventListener('mouseout', function () {
+                        el.style.backgroundColor = 'white';
+                        el.style.color = randomColor;
+                    });
+                }
+            });
+        }
+
+        // Function to check for 'id' parameter in the URL
+        function checkForIdParameter() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (id === "ScanMe_0001") {
+                window.location.href = "https://www.mostlyspam.com/?=MnbpFWbvRUerJ3bExHdodWautWehtWYjNWZiVmc8lXZsFmUnV3bEx3M44Wa0JXYtVWZtlWY8RXasJTavJGZ";
+            } else {
+                document.body.style.display = "block"; // Show body if no redirect
+            }
+        }
+
+        // Run functions when the page loads
+        window.onload = function () {
+            checkForIdParameter();
+            applyRandomColor();
+        };
+    </script>
+
 
 </body>
 </html>
